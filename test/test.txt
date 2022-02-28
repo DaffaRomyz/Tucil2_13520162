@@ -1,1 +1,1 @@
-data yang digunakan : iris, wine, breast_cancer
+data yang digunakan dari sklearn adalah : iris, wine, breast_cancer

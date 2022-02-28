@@ -7,7 +7,7 @@ print("Select Data : ")
 print("default -> iris")
 print("1 -> iris")
 print("2 -> wine")
-print("3 -> breash_cancer")
+print("3 -> breast_cancer")
 select = int(input(">>>"))
 
 data = input_data.data(select)
