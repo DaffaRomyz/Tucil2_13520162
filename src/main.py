@@ -1,14 +1,30 @@
 # visualisasi hasil ConvexHull
 import matplotlib.pyplot as plt
-import input_iris
+import input_data
 import dnc
 
-data = input_iris.data()
-df = input_iris.dataframe(data)
+print("Select Data : ")
+print("default -> iris")
+print("1 -> iris")
+print("2 -> wine")
+print("3 -> breash_cancer")
+select = int(input(">>>"))
+
+data = input_data.data(select)
+df = input_data.dataframe(data)
 
 plt.figure(figsize=(10, 6))
 colors = ['b', 'r', 'g', 'c', 'm', 'y', 'k', 'w']
-plt.title('Convex Hull')
+
+if select == 1:
+    plt.title('iris')
+elif select == 2:
+    plt.title('wine')
+elif select == 3:
+    plt.title('breast_cancer')
+else:
+    plt.title('iris')
+
 plt.xlabel(data.feature_names[0])
 plt.ylabel(data.feature_names[1])
 for i in range(len(data.target_names)):
@@ -18,4 +34,16 @@ for i in range(len(data.target_names)):
     plt.scatter(bucket[:, 0], bucket[:, 1], label=data.target_names[i])
     plt.plot(hull[:, 0], hull[:, 1], colors[i])
 plt.legend()
-plt.show()
+
+print("Save figure to bin folder? y/[n]")
+save = input(">>>")
+if save == 'y':
+    plt.savefig("../bin/figure.png")
+    print("Figure saved as \"Figure.png\" in bin folder")
+
+print("Show figure? [y]/n")
+show = input(">>>")
+if show == 'n':
+    exit()
+else:
+    plt.show()

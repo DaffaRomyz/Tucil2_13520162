@@ -1,0 +1,1 @@
+data yang digunakan : iris, wine, breast_cancer

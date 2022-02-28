@@ -1,7 +1,6 @@
 import numpy as np
 import math
 
-
 def convexhull(bucket):
     arr = np.array([[0, 0]])
     minp = np.array(bucket[0])
